@@ -13,35 +13,34 @@ import com.netflix.zuul.exception.ZuulException;
 @Component
 public class TimePostFilter extends ZuulFilter{
 
-	
 	private static Logger log = LoggerFactory.getLogger(TimePostFilter.class);
 	@Override
 	public boolean shouldFilter() {
-		
+	
 		return true;
 	}
 
 	@Override
 	public Object run() throws ZuulException {
-		
+	
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
 		
 		log.info("Entrando a filtro post");
 		
-		Long tiempoInicio = (Long) request.getAttribute("tiempoInicio");
+		Long tiempoInicio = (Long) request.getAttribute("tiempoIncio");
 		Long tiempoFinal = System.currentTimeMillis();
 		Long tiempoTranscurrido = tiempoFinal - tiempoInicio;
 		
-		log.info(String.format("Tiempo transcurrido en segundos %s seg.", tiempoTranscurrido.doubleValue()/1000.00));
+		log.info(String.format("Tiempo transcurrido en %s seg.",tiempoTranscurrido.doubleValue()/1000.00));
 		log.info(String.format("Tiempo transcurrido en milisegundos %s ms.",tiempoTranscurrido));
-
+		
 		return null;
 	}
 
 	@Override
 	public String filterType() {
-		
+	
 		return "post";
 	}
 

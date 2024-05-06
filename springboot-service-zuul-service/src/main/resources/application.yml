@@ -13,10 +13,18 @@ zuul:
       service-id: service-store
       path: /api/tienda/**
     celulares:
-      service-id: service-celulares
-      path: /api/phone/**
+     service-id: service-celulares
+     path: /api/phone/** 	  
+    users:
+     service-id: servicio-usuarios
+     path: /api/us/**
+    oauth:
+     service-id: servicio-oauth
+     path: /api/security/**
+     sensitive-headers: Cookie,Set-Cookie
+     
 ribbon:
-  ConnectTimeout: 3000
+  ConnnectTimeout: 3000
   ReadTimeout: 10000
 hystrix:
   command:

@@ -8,18 +8,17 @@ public class Celular {
 	
 	private String name;
 	
-	private String marca;
+	private String marca; 
 	
-	private Date createAt;
+	private Date createdAt;
 	
 	private Integer port;
-	
-	public Celular(Long id,String name, String marca) {
+
+	public Celular(long id, String name, String marca) {
 		this.id = id;
 		this.name = name;
 		this.marca = marca;
 	}
-
 	public Long getId() {
 		return id;
 	}
@@ -44,12 +43,12 @@ public class Celular {
 		this.marca = marca;
 	}
 
-	public Date getCreateAt() {
-		return createAt;
+	public Date getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Integer getPort() {
@@ -59,6 +58,5 @@ public class Celular {
 	public void setPort(Integer port) {
 		this.port = port;
 	}
-	
 	
 }
